@@ -1,0 +1,670 @@
+BL51 BANKED LINKER/LOCATER V6.15                                                        01/03/2011  15:37:12  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.15, INVOKED BY:
+C:\KEIL\C51\BIN\BL51.EXE .\OBJ\TestMain.obj, .\OBJ\vs1003.obj TO .\OBJ\TestVS1003B PRINT (.\OBJ\TestVS1003B.m51) RAMSIZE
+>>  (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\OBJ\TestMain.obj (TESTMAIN)
+  .\OBJ\vs1003.obj (VS1003)
+  C:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\OBJ\TestVS1003B (TESTMAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0006H     UNIT         _DATA_GROUP_
+            DATA    000EH     0003H     UNIT         ?DT?_VS1003B_SETBASSENHANCE?VS1003
+            DATA    0011H     0002H     UNIT         ?DT?VS1003
+                    0013H     000DH                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     327BH     UNIT         ?CO?VS1003
+            CODE    327EH     0074H     UNIT         ?PR?VS1003B_INIT?VS1003
+            CODE    32F2H     0057H     UNIT         ?PR?_SPIPUTCHAR?VS1003
+            CODE    3349H     0053H     UNIT         ?PR?VSSINETEST?VS1003
+            CODE    339CH     004FH     UNIT         ?PR?TEST_1003_PLAYMP3FILE?VS1003
+            CODE    33EBH     004CH     UNIT         ?PR?_VS1003B_SETBASSENHANCE?VS1003
+            CODE    3437H     0043H     UNIT         ?PR?MP3SOFTRESET?VS1003
+            CODE    347AH     002AH     UNIT         ?PR?_WAIT?VS1003
+            CODE    34A4H     0025H     UNIT         ?PR?_MP3WRITEREGISTER?VS1003
+            CODE    34C9H     0022H     UNIT         ?PR?VS1003B_SETVIRTUALSURROUNDON?VS1003
+            CODE    34EBH     0022H     UNIT         ?PR?VS1003B_SETVIRTUALSURROUNDOFF?VS1003
+            CODE    350DH     0020H     UNIT         ?PR?_MP3READREGISTER?VS1003
+            CODE    352DH     001BH     UNIT         ?PR?VS1003B_FILL2048ZERO?VS1003
+            CODE    3548H     0018H     UNIT         ?PR?SPI_RECBYTE?VS1003
+            CODE    3560H     0011H     UNIT         ?PR?MP3RESET?VS1003
+            CODE    3571H     000EH     UNIT         ?PR?VS1003B_SOFTRESET?VS1003
+            CODE    357FH     000CH     UNIT         ?PR?INITPORTVS1003?VS1003
+            CODE    358BH     000CH     UNIT         ?PR?TESTVS1003B?VS1003
+            CODE    3597H     000CH     UNIT         ?PR?_VS1003B_WRITECMD?VS1003
+            CODE    35A3H     000CH     UNIT         ?C_C51STARTUP
+            CODE    35AFH     000AH     UNIT         ?PR?_VS1003B_WRITEDAT?VS1003
+            CODE    35B9H     0008H     UNIT         ?PR?MAIN?TESTMAIN
+            CODE    35C1H     0007H     UNIT         ?PR?CHECKVS1003B_DRQ?VS1003
+            CODE    35C8H     0005H     UNIT         ?PR?MSPI_INIT?VS1003
+            CODE    35CDH     0004H     UNIT         ?PR?_VS1003B_READCMD?VS1003
+
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 2
+
+
+
+
+OVERLAY MAP OF MODULE:   .\OBJ\TestVS1003B (TESTMAIN)
+
+
+SEGMENT                                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT                            START    LENGTH     START    LENGTH
+------------------------------------------------------------------------------------
+?C_C51STARTUP                                    -----    -----      -----    -----
+  +--> ?PR?MAIN?TESTMAIN
+
+?PR?MAIN?TESTMAIN                                -----    -----      -----    -----
+  +--> ?PR?INITPORTVS1003?VS1003
+  +--> ?PR?TESTVS1003B?VS1003
+
+?PR?INITPORTVS1003?VS1003                        -----    -----      -----    -----
+  +--> ?PR?MSPI_INIT?VS1003
+
+?PR?TESTVS1003B?VS1003                           -----    -----      -----    -----
+  +--> ?PR?MP3RESET?VS1003
+  +--> ?PR?VSSINETEST?VS1003
+  +--> ?PR?MP3SOFTRESET?VS1003
+  +--> ?PR?TEST_1003_PLAYMP3FILE?VS1003
+
+?PR?MP3RESET?VS1003                              -----    -----      -----    -----
+  +--> ?PR?_WAIT?VS1003
+  +--> ?PR?_MP3WRITEREGISTER?VS1003
+  +--> ?PR?MP3SOFTRESET?VS1003
+
+?PR?_MP3WRITEREGISTER?VS1003                     -----    -----      -----    -----
+  +--> ?PR?_SPIPUTCHAR?VS1003
+
+?PR?_SPIPUTCHAR?VS1003                           -----    -----      -----    -----
+  +--> ?PR?_WAIT?VS1003
+
+?PR?MP3SOFTRESET?VS1003                          -----    -----      -----    -----
+  +--> ?PR?_MP3WRITEREGISTER?VS1003
+  +--> ?PR?_WAIT?VS1003
+  +--> ?PR?_SPIPUTCHAR?VS1003
+
+?PR?VSSINETEST?VS1003                            -----    -----      -----    -----
+  +--> ?PR?_WAIT?VS1003
+  +--> ?PR?_MP3WRITEREGISTER?VS1003
+  +--> ?PR?_SPIPUTCHAR?VS1003
+
+?PR?TEST_1003_PLAYMP3FILE?VS1003                 -----    -----      0008H    0004H
+  +--> ?PR?VS1003B_SOFTRESET?VS1003
+  +--> ?PR?CHECKVS1003B_DRQ?VS1003
+  +--> ?CO?VS1003
+  +--> ?PR?_VS1003B_WRITEDAT?VS1003
+  +--> ?PR?VS1003B_FILL2048ZERO?VS1003
+
+?PR?VS1003B_SOFTRESET?VS1003                     -----    -----      -----    -----
+  +--> ?PR?_VS1003B_WRITECMD?VS1003
+  +--> ?PR?_WAIT?VS1003
+
+?PR?_VS1003B_WRITECMD?VS1003                     -----    -----      000CH    0002H
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 3
+
+
+  +--> ?PR?_MP3WRITEREGISTER?VS1003
+
+?PR?CHECKVS1003B_DRQ?VS1003                      0020H.0  0000H.1    -----    -----
+
+?PR?_VS1003B_WRITEDAT?VS1003                     -----    -----      -----    -----
+  +--> ?PR?_SPIPUTCHAR?VS1003
+
+?PR?VS1003B_FILL2048ZERO?VS1003                  -----    -----      -----    -----
+  +--> ?PR?CHECKVS1003B_DRQ?VS1003
+  +--> ?PR?_VS1003B_WRITEDAT?VS1003
+
+
+
+SYMBOL TABLE OF MODULE:  .\OBJ\TestVS1003B (TESTMAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TESTMAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00B0H         PUBLIC        P3
+  D:00A8H         PUBLIC        IE
+  D:00B8H         PUBLIC        IP
+  C:35B9H         PUBLIC        main
+  D:0098H         PUBLIC        SCON
+  D:0088H         PUBLIC        TCON
+  D:00C8H         PUBLIC        T2CON
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          MAIN
+  C:35B9H         LINE#         24
+  C:35B9H         LINE#         25
+  C:35B9H         LINE#         26
+  C:35B9H         LINE#         27
+  C:35B9H         LINE#         28
+  C:35BCH         LINE#         29
+  C:35BFH         LINE#         30
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        TESTMAIN
+
+  -------         MODULE        VS1003
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:3349H         PUBLIC        VsSineTest
+  C:3548H         SYMBOL        SPI_RecByte
+  C:0003H         PUBLIC        MusicData
+  D:0090H         PUBLIC        P1
+  C:33EBH         PUBLIC        _VS1003B_SetBassEnhance
+  D:00B0H         PUBLIC        P3
+  C:352DH         PUBLIC        VS1003B_Fill2048Zero
+  D:00A8H         PUBLIC        IE
+  B:00B0H.2       PUBLIC        MP3_XRESET
+  C:3437H         PUBLIC        Mp3SoftReset
+  D:00B8H         PUBLIC        IP
+  B:00B0H.3       PUBLIC        MP3_XCS
+  C:327EH         PUBLIC        VS1003B_Init
+  C:332EH         PUBLIC        _SPIPutChar
+  B:0090H.5       PUBLIC        c_SPI_SI
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 4
+
+
+  C:357FH         PUBLIC        InitPortVS1003
+  C:35C8H         PUBLIC        MSPI_Init
+  C:34EBH         PUBLIC        VS1003B_SetVirtualSurroundOff
+  B:0090H.6       PUBLIC        c_SPI_SO
+  D:0098H         PUBLIC        SCON
+  C:339CH         PUBLIC        test_1003_PlayMP3File
+  D:0088H         PUBLIC        TCON
+  C:3571H         PUBLIC        VS1003B_SoftReset
+  C:348EH         PUBLIC        _wait
+  C:350DH         PUBLIC        _Mp3ReadRegister
+  C:34AAH         PUBLIC        _Mp3WriteRegister
+  C:34C9H         PUBLIC        VS1003B_SetVirtualSurroundOn
+  C:358BH         PUBLIC        TestVS1003B
+  C:35C1H         PUBLIC        CheckVS1003B_DRQ
+  B:00B0H.5       PUBLIC        MP3_DREQ
+  B:00B0H.4       PUBLIC        MP3_XDCS
+  C:35CDH         PUBLIC        _VS1003B_ReadCMD
+  D:00C8H         PUBLIC        T2CON
+  D:0011H         PUBLIC        uiVolumeCount
+  B:0090H.7       PUBLIC        c_SPI_CLK
+  C:3597H         PUBLIC        _VS1003B_WriteCMD
+  C:3560H         PUBLIC        Mp3Reset
+  C:35AFH         PUBLIC        _VS1003B_WriteDAT
+  D:00D0H         PUBLIC        PSW
+  -------         PROC          L?0087
+  -------         ENDPROC       L?0087
+  -------         PROC          _WAIT
+  D:0007H         SYMBOL        ucDelayCount
+  -------         DO            
+  D:0006H         SYMBOL        ucTempCount
+  D:0005H         SYMBOL        uci
+  -------         ENDDO         
+  C:348EH         LINE#         70
+  C:348EH         LINE#         71
+  C:348EH         LINE#         75
+  C:3495H         LINE#         76
+  C:3495H         LINE#         79
+  C:3497H         LINE#         80
+  C:349DH         LINE#         81
+  C:349DH         LINE#         82
+  C:349EH         LINE#         83
+  C:34A0H         LINE#         84
+  C:34A3H         LINE#         85
+  -------         ENDPROC       _WAIT
+  -------         PROC          MSPI_INIT
+  C:35C8H         LINE#         94
+  C:35C8H         LINE#         95
+  C:35C8H         LINE#         105
+  C:35CAH         LINE#         106
+  C:35CCH         LINE#         108
+  -------         ENDPROC       MSPI_INIT
+  -------         PROC          INITPORTVS1003
+  C:357FH         LINE#         116
+  C:357FH         LINE#         117
+  C:357FH         LINE#         118
+  C:3582H         LINE#         122
+  C:3584H         LINE#         124
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 5
+
+
+  C:3586H         LINE#         125
+  C:3588H         LINE#         126
+  C:358AH         LINE#         127
+  -------         ENDPROC       INITPORTVS1003
+  C:3325H         SYMBOL        L?0086
+  -------         PROC          L?0085
+  -------         ENDPROC       L?0085
+  C:3325H         SYMBOL        L?0086
+  -------         PROC          _SPIPUTCHAR
+  D:0007H         SYMBOL        ucSendData
+  -------         DO            
+  D:0005H         SYMBOL        ucCount
+  D:0006H         SYMBOL        ucMaskCode
+  -------         ENDDO         
+  C:332EH         LINE#         142
+  C:332EH         LINE#         143
+  C:332EH         LINE#         149
+  C:3330H         LINE#         150
+  C:3332H         LINE#         151
+  C:3332H         LINE#         152
+  C:3334H         LINE#         154
+  C:3338H         LINE#         155
+  C:3338H         LINE#         156
+  C:333AH         LINE#         157
+  C:333CH         LINE#         159
+  C:333CH         LINE#         160
+  C:333EH         LINE#         161
+  C:333EH         LINE#         163
+  C:3340H         LINE#         164
+  C:3344H         LINE#         166
+  C:3348H         LINE#         167
+  -------         ENDPROC       _SPIPUTCHAR
+  -------         PROC          SPI_RECBYTE
+  -------         DO            
+  D:0007H         SYMBOL        ucReadData
+  D:0006H         SYMBOL        ucCount
+  -------         ENDDO         
+  C:3548H         LINE#         175
+  C:3548H         LINE#         176
+  C:3548H         LINE#         180
+  C:354AH         LINE#         181
+  C:354CH         LINE#         183
+  C:354DH         LINE#         184
+  C:354DH         LINE#         185
+  C:3551H         LINE#         187
+  C:3553H         LINE#         190
+  C:3556H         LINE#         191
+  C:3556H         LINE#         192
+  C:3559H         LINE#         193
+  C:3559H         LINE#         194
+  C:355BH         LINE#         196
+  C:355FH         LINE#         198
+  C:355FH         LINE#         199
+  -------         ENDPROC       SPI_RECBYTE
+  -------         PROC          L?0088
+  -------         ENDPROC       L?0088
+  -------         PROC          _MP3WRITEREGISTER
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 6
+
+
+  D:0004H         SYMBOL        addressbyte
+  D:0002H         SYMBOL        highbyte
+  D:0003H         SYMBOL        lowbyte
+  C:34AAH         LINE#         209
+  C:34AEH         LINE#         210
+  C:34AEH         LINE#         211
+  C:34B0H         LINE#         212
+  C:34B2H         LINE#         213
+  C:34B7H         LINE#         214
+  C:34BCH         LINE#         215
+  C:34C1H         LINE#         216
+  C:34C6H         LINE#         217
+  C:34C8H         LINE#         218
+  -------         ENDPROC       _MP3WRITEREGISTER
+  -------         PROC          _MP3READREGISTER
+  D:0004H         SYMBOL        addressbyte
+  -------         DO            
+  D:0002H         SYMBOL        resultvalue
+  D:0007H         SYMBOL        ucReadValue
+  -------         ENDDO         
+  C:350DH         LINE#         226
+  C:350FH         LINE#         227
+  C:350FH         LINE#         228
+  C:3512H         LINE#         231
+  C:3514H         LINE#         232
+  C:3516H         LINE#         233
+  C:351BH         LINE#         234
+  C:3520H         LINE#         238
+  C:3523H         LINE#         239
+  C:3525H         LINE#         242
+  C:3528H         LINE#         243
+  C:3528H         LINE#         245
+  C:352AH         LINE#         246
+  C:352CH         LINE#         247
+  -------         ENDPROC       _MP3READREGISTER
+  -------         PROC          MP3SOFTRESET
+  C:3437H         LINE#         255
+  C:3437H         LINE#         256
+  C:3437H         LINE#         257
+  C:3440H         LINE#         259
+  C:3445H         LINE#         260
+  C:3448H         LINE#         261
+  C:3451H         LINE#         262
+  C:345AH         LINE#         263
+  C:3463H         LINE#         264
+  C:346CH         LINE#         265
+  C:3471H         LINE#         268
+  C:3473H         LINE#         269
+  C:3474H         LINE#         270
+  C:3474H         LINE#         271
+  C:3474H         LINE#         272
+  C:3477H         LINE#         273
+  C:3479H         LINE#         275
+  -------         ENDPROC       MP3SOFTRESET
+  -------         PROC          MP3RESET
+  C:3560H         LINE#         282
+  C:3560H         LINE#         283
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 7
+
+
+  C:3560H         LINE#         284
+  C:3560H         LINE#         285
+  C:3560H         LINE#         286
+  C:3560H         LINE#         287
+  C:3560H         LINE#         288
+  C:3560H         LINE#         289
+  C:3560H         LINE#         290
+  C:3563H         LINE#         291
+  C:3566H         LINE#         293
+  C:356BH         LINE#         294
+  C:356EH         LINE#         295
+  -------         ENDPROC       MP3RESET
+  -------         PROC          CHECKVS1003B_DRQ
+  -------         DO            
+  B:0020H.0       SYMBOL        bResult
+  -------         ENDDO         
+  C:35C1H         LINE#         299
+  C:35C1H         LINE#         300
+  C:35C1H         LINE#         303
+  C:35C5H         LINE#         304
+  C:35C7H         LINE#         305
+  -------         ENDPROC       CHECKVS1003B_DRQ
+  -------         PROC          VSSINETEST
+  C:3349H         LINE#         314
+  C:3349H         LINE#         315
+  C:3349H         LINE#         316
+  C:3349H         LINE#         317
+  C:3349H         LINE#         318
+  C:3349H         LINE#         319
+  C:3349H         LINE#         320
+  C:3349H         LINE#         321
+  C:3349H         LINE#         322
+  C:334CH         LINE#         323
+  C:334FH         LINE#         325
+  C:3358H         LINE#         326
+  C:335BH         LINE#         327
+  C:335DH         LINE#         331
+  C:3362H         LINE#         332
+  C:3367H         LINE#         333
+  C:336CH         LINE#         334
+  C:336EH         LINE#         335
+  C:336EH         LINE#         336
+  C:336EH         LINE#         337
+  C:336EH         LINE#         338
+  C:336EH         LINE#         340
+  C:336EH         LINE#         341
+  C:336EH         LINE#         342
+  C:336EH         LINE#         345
+  C:336EH         LINE#         346
+  C:336EH         LINE#         347
+  C:336EH         LINE#         348
+  C:336EH         LINE#         349
+  C:336EH         LINE#         350
+  C:336EH         LINE#         351
+  C:336EH         LINE#         352
+  C:336EH         LINE#         353
+  C:3371H         LINE#         355
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 8
+
+
+  C:3376H         LINE#         356
+  C:3379H         LINE#         358
+  C:337BH         LINE#         361
+  C:337DH         LINE#         362
+  C:3382H         LINE#         363
+  C:3387H         LINE#         364
+  C:338CH         LINE#         365
+  C:338EH         LINE#         366
+  C:338EH         LINE#         367
+  C:338EH         LINE#         368
+  C:338EH         LINE#         369
+  C:338EH         LINE#         371
+  C:338EH         LINE#         372
+  C:338EH         LINE#         374
+  C:338EH         LINE#         377
+  C:338EH         LINE#         378
+  C:338EH         LINE#         379
+  C:338EH         LINE#         380
+  C:338EH         LINE#         381
+  C:338EH         LINE#         382
+  C:338EH         LINE#         383
+  C:338EH         LINE#         384
+  C:338EH         LINE#         385
+  C:3391H         LINE#         387
+  C:3396H         LINE#         388
+  C:3399H         LINE#         390
+  C:339BH         LINE#         391
+  -------         ENDPROC       VSSINETEST
+  -------         PROC          TESTVS1003B
+  C:358BH         LINE#         395
+  C:358BH         LINE#         396
+  C:358BH         LINE#         397
+  C:358EH         LINE#         398
+  C:3591H         LINE#         399
+  C:3594H         LINE#         400
+  -------         ENDPROC       TESTVS1003B
+  -------         PROC          _VS1003B_WRITECMD
+  D:0007H         SYMBOL        addr
+  D:000CH         SYMBOL        dat
+  C:3597H         LINE#         404
+  C:359BH         LINE#         405
+  C:359BH         LINE#         417
+  -------         ENDPROC       _VS1003B_WRITECMD
+  -------         PROC          _VS1003B_READCMD
+  D:0007H         SYMBOL        addr
+  C:35CDH         LINE#         421
+  C:35CDH         LINE#         422
+  C:35CDH         LINE#         438
+  C:35D0H         LINE#         439
+  -------         ENDPROC       _VS1003B_READCMD
+  -------         PROC          _VS1003B_WRITEDAT
+  D:0007H         SYMBOL        dat
+  C:35AFH         LINE#         442
+  C:35AFH         LINE#         443
+  C:35AFH         LINE#         449
+  C:35B1H         LINE#         450
+  C:35B4H         LINE#         451
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 9
+
+
+  C:35B6H         LINE#         452
+  C:35B8H         LINE#         454
+  -------         ENDPROC       _VS1003B_WRITEDAT
+  -------         PROC          VS1003B_SETVIRTUALSURROUNDON
+  -------         DO            
+  D:0001H         SYMBOL        ucRepeatCount
+  D:0004H         SYMBOL        uiModeValue
+  -------         ENDDO         
+  C:34C9H         LINE#         457
+  C:34C9H         LINE#         458
+  C:34C9H         LINE#         462
+  C:34CBH         LINE#         464
+  C:34CBH         LINE#         465
+  C:34CBH         LINE#         466
+  C:34D4H         LINE#         467
+  C:34D8H         LINE#         468
+  C:34D8H         LINE#         469
+  C:34D8H         LINE#         470
+  C:34D8H         LINE#         472
+  C:34D8H         LINE#         473
+  C:34DBH         LINE#         474
+  C:34E0H         LINE#         475
+  C:34E0H         LINE#         476
+  C:34E1H         LINE#         477
+  C:34EAH         LINE#         478
+  C:34EAH         LINE#         480
+  -------         ENDPROC       VS1003B_SETVIRTUALSURROUNDON
+  -------         PROC          VS1003B_SETVIRTUALSURROUNDOFF
+  -------         DO            
+  D:0001H         SYMBOL        ucRepeatCount
+  D:0004H         SYMBOL        uiModeValue
+  -------         ENDDO         
+  C:34EBH         LINE#         483
+  C:34EBH         LINE#         484
+  C:34EBH         LINE#         488
+  C:34EDH         LINE#         490
+  C:34EDH         LINE#         491
+  C:34EDH         LINE#         492
+  C:34F6H         LINE#         493
+  C:34FAH         LINE#         494
+  C:34FAH         LINE#         495
+  C:34FAH         LINE#         496
+  C:34FAH         LINE#         498
+  C:34FAH         LINE#         499
+  C:34FDH         LINE#         500
+  C:3502H         LINE#         501
+  C:3502H         LINE#         502
+  C:3503H         LINE#         503
+  C:350CH         LINE#         504
+  C:350CH         LINE#         506
+  -------         ENDPROC       VS1003B_SETVIRTUALSURROUNDOFF
+  -------         PROC          _VS1003B_SETBASSENHANCE
+  D:000EH         SYMBOL        ucValue
+  D:000FH         SYMBOL        ucFrequencyID
+  -------         DO            
+  D:0001H         SYMBOL        ucRepeatCount
+  D:0082H         SYMBOL        uiWriteValue
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 10
+
+
+  D:0006H         SYMBOL        uiReadValue
+  -------         ENDDO         
+  C:33EBH         LINE#         511
+  C:33F1H         LINE#         512
+  C:33F1H         LINE#         517
+  C:33F3H         LINE#         519
+  C:33FCH         LINE#         521
+  C:33FFH         LINE#         522
+  C:340BH         LINE#         523
+  C:3414H         LINE#         525
+  C:3414H         LINE#         526
+  C:3414H         LINE#         528
+  C:341DH         LINE#         529
+  C:3422H         LINE#         531
+  C:342CH         LINE#         532
+  C:342CH         LINE#         533
+  C:342CH         LINE#         534
+  C:342CH         LINE#         535
+  C:342DH         LINE#         536
+  C:3436H         LINE#         537
+  C:3436H         LINE#         539
+  -------         ENDPROC       _VS1003B_SETBASSENHANCE
+  -------         PROC          VS1003B_INIT
+  -------         DO            
+  D:0001H         SYMBOL        retry
+  -------         ENDDO         
+  C:327EH         LINE#         545
+  C:327EH         LINE#         546
+  C:327EH         LINE#         561
+  C:3281H         LINE#         563
+  C:3283H         LINE#         564
+  C:3290H         LINE#         565
+  C:3290H         LINE#         566
+  C:3299H         LINE#         567
+  C:32A2H         LINE#         568
+  C:32A2H         LINE#         569
+  C:32A4H         LINE#         575
+  C:32A4H         LINE#         576
+  C:32B1H         LINE#         577
+  C:32B1H         LINE#         578
+  C:32BAH         LINE#         579
+  C:32C3H         LINE#         580
+  C:32C3H         LINE#         581
+  C:32C5H         LINE#         587
+  C:32D4H         LINE#         588
+  C:32D4H         LINE#         589
+  C:32DDH         LINE#         590
+  C:32E6H         LINE#         591
+  C:32E6H         LINE#         594
+  C:32EFH         LINE#         595
+  C:32F1H         LINE#         596
+  -------         ENDPROC       VS1003B_INIT
+  -------         PROC          VS1003B_SOFTRESET
+  C:3571H         LINE#         599
+  C:3571H         LINE#         600
+  C:3571H         LINE#         601
+  C:357AH         LINE#         603
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 11
+
+
+  -------         ENDPROC       VS1003B_SOFTRESET
+  -------         PROC          VS1003B_FILL2048ZERO
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0003H         SYMBOL        j
+  -------         ENDDO         
+  C:352DH         LINE#         606
+  C:352DH         LINE#         607
+  C:352DH         LINE#         610
+  C:352FH         LINE#         611
+  C:352FH         LINE#         612
+  C:3534H         LINE#         613
+  C:3534H         LINE#         614
+  C:3536H         LINE#         616
+  C:3538H         LINE#         617
+  C:3538H         LINE#         619
+  C:353DH         LINE#         620
+  C:3541H         LINE#         621
+  C:3543H         LINE#         622
+  C:3543H         LINE#         623
+  C:3547H         LINE#         624
+  -------         ENDPROC       VS1003B_FILL2048ZERO
+  -------         PROC          TEST_1003_PLAYMP3FILE
+  -------         DO            
+  D:0008H         SYMBOL        data_pointer
+  D:0004H         SYMBOL        i
+  D:000AH         SYMBOL        uiCount
+  -------         ENDDO         
+  C:339CH         LINE#         627
+  C:339CH         LINE#         628
+  C:339CH         LINE#         632
+  C:33A2H         LINE#         633
+  C:33A7H         LINE#         634
+  C:33AAH         LINE#         635
+  C:33B5H         LINE#         636
+  C:33B5H         LINE#         637
+  C:33BAH         LINE#         638
+  C:33BAH         LINE#         639
+  C:33BCH         LINE#         640
+  C:33BCH         LINE#         641
+  C:33CEH         LINE#         642
+  C:33D6H         LINE#         643
+  C:33DAH         LINE#         644
+  C:33E6H         LINE#         645
+  C:33E6H         LINE#         646
+  C:33E8H         LINE#         647
+  -------         ENDPROC       TEST_1003_PLAYMP3FILE
+  -------         ENDMOD        VS1003
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?VS1003B_SETVIRTUALSURROUNDON?VS1003
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?VS1003B_SETVIRTUALSURROUNDOFF?VS1003
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_VS1003B_SETBASSENHANCE?VS1003
+BL51 BANKED LINKER/LOCATER V6.15                                                      01/03/2011  15:37:12  PAGE 12
+
+
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?VS1003B_INIT?VS1003
+
+Program Size: data=20.1 xdata=0 code=13777
+LINK/LOCATE RUN COMPLETE.  4 WARNING(S),  0 ERROR(S)

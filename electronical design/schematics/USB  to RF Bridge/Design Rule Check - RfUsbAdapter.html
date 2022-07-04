@@ -1,0 +1,469 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD16\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">26.08.2016</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10:35:37</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc" class="file"><acronym title="W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc">W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">39</td></tr>
+</table>
+</td>
+</table><a name="IDBNQKDDQ0NCQFBGWXYNXQOX5H0HUY540V40JNUGJNZUFKLAJLLEMM"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVOGHTAD3RVMCE2NRNFCH1JQJAPEDYM453EAPYUIJYEDPYHYH0NTN">Silk primitive without silk layer</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXPGOAYMJ2CEQIMETR4QBYH3NSHR41ZXKEXK3JKIE1NUW31LLNVQF">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAS5J0KTQJ5CUMPBHFDCGGVJOYKJXZ4CTUJKKIGDCW55TJKNU5TAJ">Width Constraint (Min=0.001mm) (Max=0.254mm) (Preferred=0.254mm) (InComponent('?'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRKLHOCBDMEUQKQ2RNYOCONGY2CNB1TBTVFSECPB2V5TAFVOVC54K">Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">18</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTBGF1GJZSGG3GIGSXESHSLUZZC1MAPFKXZA1YCNFXOE01CEC1ZD">Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIAYRTXJYRSOCLRNFVUMPLORUKNWNKGP34X5BSUGZY1NBCY4AL2KJ">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">9</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDSSSWEVYSO2QXMRXEVQRI1CDRTOX5POKFFXNSVWC4MOP0HIANI4QH">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXHMZ0YXNEO1LH1J2ENCV2QRN4DG2IJC4YR110YFXX03IFMBVXI1O">Hole Size Constraint (Min=0.025mm) (Max=3mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDEP44RB4DS4O5KWZEE1P31RL5IKHLVNK003IFDOAGAM3VJ22UROG">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDIFVFI1SWED1NIAKMEYQVZBUOAK4ZYZ0ZGBRI3ANPZODAB55WFRNJ">Hole To Hole Clearance (Gap=0.05mm) (InComponent('Rout_Cut1')And InComponent('Rout_Cut2') And InComponent('Rout_Cut3')And InComponent('Rout_Cut4')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDHX20IY05IBO5FJ4RDQZAQHJXNEYG4CYGMBP3HHCGWHL4KRQRFHFM">Hole To Hole Clearance (Gap=0.2mm) (All),(All)</a></td>
+<td class="column2">12</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDHSMIZZSAIPW4MG1J233M551CCK242A25IJABR1HZJRZW2U2ILAPJ">Minimum Solder Mask Sliver (Gap=0.001mm) (InComponent('Rout_Cut1') or InComponent('Rout_Cut2') or InComponent('Rout_Cut3') or InComponent('Rout_Cut4') or InComponent('1')),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID44VV2EWY3JZVN15NCIZWFR1DMFB5XQWBQMCSIWPP4GUQEZVSGBYL">Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXQFDYIDVCXYOMG5K1FP3YUFEAJ1JZ2JDKAAFXKIR2GAK1EAH1P5E">Silk To Solder Mask (Clearance=0.1mm) (Disabled)(IsPad),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDTEKJHAQ1QO1OMG05NLAKBDTZBJIMRZROWNUWRRIRC1EOK5PVFSOH">Silk to Silk (Clearance=0.1mm) (Disabled)(All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDUJGXNDX5HDUVC0LJ4FNZJXMDPGRKYNDYW5WBOLFL1T4IA5WD4L5L">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDW20ND5YVQPP2MKHGIS0SYR1FAGFW0FSY5ZILPCEXVQ42NYUMHB4P">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">39</td>
+</tr>
+</table><br><a name="IDRKLHOCBDMEUQKQ2RNYOCONGY2CNB1TBTVFSECPB2V5TAFVOVC54K"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.254mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6362.77mil|Location2.X=6423.954mil|Location1.Y=6589.578mil|Location2.Y=6647.422mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6362.77mil|Location2.X=6423.954mil|Location1.Y=6589.578mil|Location2.Y=6647.422mil|Absolute=True">Width Constraint: Arc (29.297mm,-4.93mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6388.174mil|Location2.X=6449.359mil|Location1.Y=6800.671mil|Location2.Y=6858.515mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6388.174mil|Location2.X=6449.359mil|Location1.Y=6800.671mil|Location2.Y=6858.515mil|Absolute=True">Width Constraint: Arc (31.5mm,-1.126mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5917.121mil|Location2.X=5985.981mil|Location1.Y=6576.576mil|Location2.Y=6595.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5917.121mil|Location2.X=5985.981mil|Location1.Y=6576.576mil|Location2.Y=6595.876mil|Absolute=True">Width Constraint: Track (17.935mm,-6.058mm)(19.443mm,-6.058mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5345.015mil|Location2.X=5413.876mil|Location1.Y=6677.278mil|Location2.Y=6696.578mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5345.015mil|Location2.X=5413.876mil|Location1.Y=6677.278mil|Location2.Y=6696.578mil|Absolute=True">Width Constraint: Track (2.6mm,-3.5mm)(5.715mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5437.831mil|Location2.X=5506.691mil|Location1.Y=6677.279mil|Location2.Y=6696.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5437.831mil|Location2.X=5506.691mil|Location1.Y=6677.279mil|Location2.Y=6696.579mil|Absolute=True">Width Constraint: Track (5.715mm,-3.5mm)(7.315mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5502.083mil|Location2.X=5570.943mil|Location1.Y=6677.279mil|Location2.Y=6696.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5502.083mil|Location2.X=5570.943mil|Location1.Y=6677.279mil|Location2.Y=6696.579mil|Absolute=True">Width Constraint: Track (7.315mm,-3.5mm)(8.979mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5634.583mil|Location2.X=5703.443mil|Location1.Y=6677.279mil|Location2.Y=6696.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5634.583mil|Location2.X=5703.443mil|Location1.Y=6677.279mil|Location2.Y=6696.579mil|Absolute=True">Width Constraint: Track (10.579mm,-3.5mm)(12.446mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5976.571mil|Location2.X=6045.431mil|Location1.Y=6576.576mil|Location2.Y=6595.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5976.571mil|Location2.X=6045.431mil|Location1.Y=6576.576mil|Location2.Y=6595.876mil|Absolute=True">Width Constraint: Track (19.443mm,-6.058mm)(20.955mm,-6.058mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5707.544mil|Location2.X=5776.404mil|Location1.Y=6578.576mil|Location2.Y=6597.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5707.544mil|Location2.X=5776.404mil|Location1.Y=6578.576mil|Location2.Y=6597.876mil|Absolute=True">Width Constraint: Track (12.484mm,-6.007mm)(14.247mm,-6.007mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5770.657mil|Location2.X=5839.517mil|Location1.Y=6577.48mil|Location2.Y=6596.78mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5770.657mil|Location2.X=5839.517mil|Location1.Y=6577.48mil|Location2.Y=6596.78mil|Absolute=True">Width Constraint: Track (14.275mm,-6.035mm)(15.662mm,-6.035mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5386.334mil|Location2.X=5405.634mil|Location1.Y=6922.377mil|Location2.Y=6991.237mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5386.334mil|Location2.X=5405.634mil|Location1.Y=6922.377mil|Location2.Y=6991.237mil|Absolute=True">Width Constraint: Track (5.207mm,2.159mm)(5.207mm,3.264mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5969.56mil|Location2.X=6008.341mil|Location1.Y=7113.236mil|Location2.Y=7150.744mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5969.56mil|Location2.X=6008.341mil|Location1.Y=7113.236mil|Location2.Y=7150.744mil|Absolute=True">Width Constraint: Track (19.819mm,7.357mm)(19.833mm,7.372mm) on TOP Actual Width = 0.01mm, Target Width = 0.1mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5618.167mil|Location2.X=5687.027mil|Location1.Y=6578.576mil|Location2.Y=6597.876mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5618.167mil|Location2.X=5687.027mil|Location1.Y=6578.576mil|Location2.Y=6597.876mil|Absolute=True">Width Constraint: Track (9.707mm,-6.007mm)(12.484mm,-6.007mm) on BOT Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5511.354mil|Location2.X=5580.214mil|Location1.Y=6578.853mil|Location2.Y=6598.153mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5511.354mil|Location2.X=5580.214mil|Location1.Y=6578.853mil|Location2.Y=6598.153mil|Absolute=True">Width Constraint: Track (7.065mm,-6mm)(9.7mm,-6mm) on BOT Actual Width = 0.4mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5570.902mil|Location2.X=5608.41mil|Location1.Y=6551.695mil|Location2.Y=6590.476mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5570.902mil|Location2.X=5608.41mil|Location1.Y=6551.695mil|Location2.Y=6590.476mil|Absolute=True">Width Constraint: Track (9.7mm,-6mm)(9.7mm,-6mm) on BOT Actual Width = 0.01mm, Target Width = 0.1mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6295.586mil|Location2.X=6371.724mil|Location1.Y=6577.159mil|Location2.Y=6599.844mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6295.586mil|Location2.X=6371.724mil|Location1.Y=6577.159mil|Location2.Y=6599.844mil|Absolute=True">Width Constraint: Track (27.407mm,-6.007mm)(29.297mm,-6.007mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6375.189mil|Location2.X=6397.874mil|Location1.Y=6694.441mil|Location2.Y=6770.58mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6375.189mil|Location2.X=6397.874mil|Location1.Y=6694.441mil|Location2.Y=6770.58mil|Absolute=True">Width Constraint: Track (30.374mm,-4.93mm)(30.374mm,-1.126mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6478.579mil|Location2.X=6554.717mil|Location1.Y=6813.657mil|Location2.Y=6836.342mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6478.579mil|Location2.X=6554.717mil|Location1.Y=6813.657mil|Location2.Y=6836.342mil|Absolute=True">Width Constraint: Track (31.5mm,0mm)(34.5mm,0mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDIAYRTXJYRSOCLRNFVUMPLORUKNWNKGP34X5BSUGZY1NBCY4AL2KJ"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5930.239mil|Location2.X=5961.318mil|Location1.Y=6892.137mil|Location2.Y=6923.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5930.239mil|Location2.X=5961.318mil|Location1.Y=6892.137mil|Location2.Y=6923.216mil|Absolute=True">Short-Circuit Constraint: Between Via (19.179mm,2.1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 151.023mm][Y = 175.455mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5930.239mil|Location2.X=5961.318mil|Location1.Y=6935.444mil|Location2.Y=6966.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5930.239mil|Location2.X=5961.318mil|Location1.Y=6935.444mil|Location2.Y=6966.523mil|Absolute=True">Short-Circuit Constraint: Between Via (19.179mm,3.2mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 151.023mm][Y = 176.555mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5930.239mil|Location2.X=5961.318mil|Location1.Y=6848.83mil|Location2.Y=6879.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5930.239mil|Location2.X=5961.318mil|Location1.Y=6848.83mil|Location2.Y=6879.909mil|Absolute=True">Short-Circuit Constraint: Between Via (19.179mm,1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 151.023mm][Y = 174.355mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5886.932mil|Location2.X=5918.011mil|Location1.Y=6892.137mil|Location2.Y=6923.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5886.932mil|Location2.X=5918.011mil|Location1.Y=6892.137mil|Location2.Y=6923.216mil|Absolute=True">Short-Circuit Constraint: Between Via (18.079mm,2.1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 149.923mm][Y = 175.455mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5843.625mil|Location2.X=5874.704mil|Location1.Y=6892.137mil|Location2.Y=6923.216mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5843.625mil|Location2.X=5874.704mil|Location1.Y=6892.137mil|Location2.Y=6923.216mil|Absolute=True">Short-Circuit Constraint: Between Via (16.979mm,2.1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 148.823mm][Y = 175.455mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5886.932mil|Location2.X=5918.011mil|Location1.Y=6935.444mil|Location2.Y=6966.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5886.932mil|Location2.X=5918.011mil|Location1.Y=6935.444mil|Location2.Y=6966.523mil|Absolute=True">Short-Circuit Constraint: Between Via (18.079mm,3.2mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 149.923mm][Y = 176.555mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5886.932mil|Location2.X=5918.011mil|Location1.Y=6848.83mil|Location2.Y=6879.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5886.932mil|Location2.X=5918.011mil|Location1.Y=6848.83mil|Location2.Y=6879.909mil|Absolute=True">Short-Circuit Constraint: Between Via (18.079mm,1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 149.923mm][Y = 174.355mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5843.625mil|Location2.X=5874.704mil|Location1.Y=6935.444mil|Location2.Y=6966.523mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5843.625mil|Location2.X=5874.704mil|Location1.Y=6935.444mil|Location2.Y=6966.523mil|Absolute=True">Short-Circuit Constraint: Between Via (16.979mm,3.2mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 148.823mm][Y = 176.555mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5843.625mil|Location2.X=5874.704mil|Location1.Y=6848.83mil|Location2.Y=6879.909mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5843.625mil|Location2.X=5874.704mil|Location1.Y=6848.83mil|Location2.Y=6879.909mil|Absolute=True">Short-Circuit Constraint: Between Via (16.979mm,1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 148.823mm][Y = 174.355mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDHX20IY05IBO5FJ4RDQZAQHJXNEYG4CYGMBP3HHCGWHL4KRQRFHFM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole To Hole Clearance (Gap=0.2mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5935.808mil|Location2.X=5944.932mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5935.808mil|Location2.X=5944.932mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut1-1(19.241mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.841mm,-8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5920.06mil|Location2.X=5929.184mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5920.06mil|Location2.X=5929.184mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut1-1(18.441mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.841mm,-8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5872.816mil|Location2.X=5881.94mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5872.816mil|Location2.X=5881.94mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut1-1(17.641mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-2(17.241mm,-8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5857.068mil|Location2.X=5866.192mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5857.068mil|Location2.X=5866.192mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut1-1(16.841mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-2(17.241mm,-8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5904.312mil|Location2.X=5913.436mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5904.312mil|Location2.X=5913.436mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut1-1(18.041mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.441mm,-8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5888.564mil|Location2.X=5897.688mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5888.564mil|Location2.X=5897.688mil|Location1.Y=6493.311mil|Location2.Y=6502.435mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut1-1(17.641mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.041mm,-8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5809.327mil|Location2.X=5818.451mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5809.327mil|Location2.X=5818.451mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut2-1(15.629mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.029mm,8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5825.075mil|Location2.X=5834.199mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5825.075mil|Location2.X=5834.199mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut2-1(16.429mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.029mm,8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5872.319mil|Location2.X=5881.443mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5872.319mil|Location2.X=5881.443mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut2-1(17.229mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-2(17.629mm,8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5888.067mil|Location2.X=5897.191mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5888.067mil|Location2.X=5897.191mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut2-1(18.029mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-2(17.629mm,8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5840.823mil|Location2.X=5849.947mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5840.823mil|Location2.X=5849.947mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut2-1(16.829mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.429mm,8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5856.571mil|Location2.X=5865.695mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5856.571mil|Location2.X=5865.695mil|Location1.Y=7147.563mil|Location2.Y=7156.687mil|Absolute=True">Hole To Hole Clearance Constraint: (0.1mm &lt; 0.2mm) Between Pad Rout_Cut2-1(17.229mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.829mm,8.309mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>

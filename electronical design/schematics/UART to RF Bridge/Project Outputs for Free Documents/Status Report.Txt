@@ -1,0 +1,14 @@
+Project Outputs Generation Report
+---------------------------------
+Start Output Generation At 09:34:58 On 29.08.2016
+
+Output: Bill of Materials
+Type  : BOM
+From  : Project [RfLauchPadAdapter.PrjPcb]
+   Generated File[Bill of Materials-RfLauchPadAdapter.xlsx]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 09:35:08 On 29.08.2016

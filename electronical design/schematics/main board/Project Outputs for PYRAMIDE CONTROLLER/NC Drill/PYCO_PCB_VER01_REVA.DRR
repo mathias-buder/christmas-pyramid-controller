@@ -1,0 +1,21 @@
+---------------------------------------------------------------------------
+NCDrill File Report For: PYCO_PCB_VER01_REVA.PcbDoc   18.11.2015  21:18:12
+---------------------------------------------------------------------------
+
+Layer Pair : TOP to BOT
+ASCII RoundHoles File : PYCO_PCB_VER01_REVA.TXT
+
+Tool         Hole Size           Hole Type     Hole Count Plated       Tool Travel
+---------------------------------------------------------------------------
+T1        0.3mm (11.811mil)        Round          101              782.15 mm (30.79 Inch)
+T2        0.8mm (31.496mil)        Round          3                5.08 mm (0.20 Inch)
+T3        1mm (39.37mil)           Round          37               274.24 mm (10.80 Inch)
+T4        1.15mm (45.276mil)       Round          40               139.70 mm (5.50 Inch)
+T5        1.5mm (59.055mil)        Round          2                24.20 mm (0.95 Inch)
+T6        1.6mm (62.992mil)        Round          3                18.50 mm (0.73 Inch)
+T7        1.8mm (70.866mil)        Round          1                0.00 mm (0.00 Inch)
+T8        3.3mm (129.921mil)       Round          4                290.00 mm (11.42 Inch)
+---------------------------------------------------------------------------
+Totals                                            191              1533.88 mm (60.39 Inch)
+
+Total Processing Time (hh:mm:ss) : 00:00:00

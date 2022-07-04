@@ -1,0 +1,98 @@
+Protel Design System Design Rule Check
+PCB File : W:\Transfer\03_RfUsbAdapter\VER01\REVA\RfUsbAdapter.PcbDoc
+Date     : 26.08.2016
+Time     : 10:35:37
+
+Processing Rule : Silk primitive without silk layer
+Rule Violations :0
+
+Processing Rule : Clearance Constraint (Gap=0.15mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.001mm) (Max=0.254mm) (Preferred=0.254mm) (InComponent('?'))
+Rule Violations :0
+
+Processing Rule : Width Constraint (Min=0.1mm) (Max=1mm) (Preferred=0.254mm) (All)
+   Violation between Width Constraint: Arc (29.297mm,-4.93mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm
+   Violation between Width Constraint: Arc (31.5mm,-1.126mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (17.935mm,-6.058mm)(19.443mm,-6.058mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (2.6mm,-3.5mm)(5.715mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (5.715mm,-3.5mm)(7.315mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (7.315mm,-3.5mm)(8.979mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (10.579mm,-3.5mm)(12.446mm,-3.5mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (19.443mm,-6.058mm)(20.955mm,-6.058mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (12.484mm,-6.007mm)(14.247mm,-6.007mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (14.275mm,-6.035mm)(15.662mm,-6.035mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (5.207mm,2.159mm)(5.207mm,3.264mm) on TOP Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (19.819mm,7.357mm)(19.833mm,7.372mm) on TOP Actual Width = 0.01mm, Target Width = 0.1mm
+   Violation between Width Constraint: Track (9.707mm,-6.007mm)(12.484mm,-6.007mm) on BOT Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (7.065mm,-6mm)(9.7mm,-6mm) on BOT Actual Width = 0.4mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (9.7mm,-6mm)(9.7mm,-6mm) on BOT Actual Width = 0.01mm, Target Width = 0.1mm
+   Violation between Width Constraint: Track (27.407mm,-6.007mm)(29.297mm,-6.007mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (30.374mm,-4.93mm)(30.374mm,-1.126mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm
+   Violation between Width Constraint: Track (31.5mm,0mm)(34.5mm,0mm) on BOT Actual Width = 0.5mm, Target Width = 0.3mm
+Rule Violations :18
+
+Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.508mm) (Conductor Width=0.254mm) (Air Gap=0.254mm) (Entries=4) (All)
+Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Via (19.179mm,2.1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 151.023mm][Y = 175.455mm]
+   Violation between Short-Circuit Constraint: Between Via (19.179mm,3.2mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 151.023mm][Y = 176.555mm]
+   Violation between Short-Circuit Constraint: Between Via (19.179mm,1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 151.023mm][Y = 174.355mm]
+   Violation between Short-Circuit Constraint: Between Via (18.079mm,2.1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 149.923mm][Y = 175.455mm]
+   Violation between Short-Circuit Constraint: Between Via (16.979mm,2.1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 148.823mm][Y = 175.455mm]
+   Violation between Short-Circuit Constraint: Between Via (18.079mm,3.2mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 149.923mm][Y = 176.555mm]
+   Violation between Short-Circuit Constraint: Between Via (18.079mm,1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 149.923mm][Y = 174.355mm]
+   Violation between Short-Circuit Constraint: Between Via (16.979mm,3.2mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 148.823mm][Y = 176.555mm]
+   Violation between Short-Circuit Constraint: Between Via (16.979mm,1mm) from TOP to BOT And Pad IC2-33(18.079mm,2.1mm) on TOP Location : [X = 148.823mm][Y = 174.355mm]
+Rule Violations :9
+
+Processing Rule : Un-Routed Net Constraint ( (All) )
+Rule Violations :0
+
+Processing Rule : Hole Size Constraint (Min=0.025mm) (Max=3mm) (All)
+Rule Violations :0
+
+Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.05mm) (InComponent('Rout_Cut1')And InComponent('Rout_Cut2') And InComponent('Rout_Cut3')And InComponent('Rout_Cut4')),(All)
+Rule Violations :0
+
+Processing Rule : Hole To Hole Clearance (Gap=0.2mm) (All),(All)
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut1-1(19.241mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.841mm,-8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut1-1(18.441mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.841mm,-8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut1-1(17.641mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-2(17.241mm,-8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut1-1(16.841mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-2(17.241mm,-8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut1-1(18.041mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.441mm,-8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut1-1(17.641mm,-8.309mm) on Multi-Layer And Pad Rout_Cut1-1(18.041mm,-8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut2-1(15.629mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.029mm,8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut2-1(16.429mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.029mm,8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut2-1(17.229mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-2(17.629mm,8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut2-1(18.029mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-2(17.629mm,8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut2-1(16.829mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.429mm,8.309mm) on Multi-Layer 
+   Violation between Hole To Hole Clearance Constraint: (0.1mm < 0.2mm) Between Pad Rout_Cut2-1(17.229mm,8.309mm) on Multi-Layer And Pad Rout_Cut2-1(16.829mm,8.309mm) on Multi-Layer 
+Rule Violations :12
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.001mm) (InComponent('Rout_Cut1') or InComponent('Rout_Cut2') or InComponent('Rout_Cut3') or InComponent('Rout_Cut4') or InComponent('1')),(All)
+Rule Violations :0
+
+Processing Rule : Minimum Solder Mask Sliver (Gap=0.1mm) (All),(All)
+Rule Violations :0
+
+Processing Rule : Silk To Solder Mask (Clearance=0.1mm) (Disabled)(IsPad),(All)
+Rule Violations :0
+
+Processing Rule : Silk to Silk (Clearance=0.1mm) (Disabled)(All),(All)
+Rule Violations :0
+
+Processing Rule : Net Antennae (Tolerance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
+Rule Violations :0
+
+
+Violations Detected : 39
+Time Elapsed        : 00:00:02

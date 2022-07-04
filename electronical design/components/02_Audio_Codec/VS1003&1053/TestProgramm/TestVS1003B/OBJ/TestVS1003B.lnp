@@ -1,0 +1,4 @@
+".\OBJ\TestMain.obj",
+".\OBJ\vs1003.obj" 
+TO ".\OBJ\TestVS1003B" 
+PRINT(".\OBJ\TestVS1003B.m51") RAMSIZE(256) 

@@ -1,0 +1,55 @@
+C51 COMPILER V8.16   TESTMAIN                                                              01/03/2011 15:37:12 PAGE 1   
+
+
+C51 COMPILER V8.16, COMPILATION OF MODULE TESTMAIN
+OBJECT MODULE PLACED IN .\OBJ\TestMain.obj
+COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE TestMain.c BROWSE DEBUG OBJECTEXTEND PRINT(.\OBJ\TestMain.lst) OBJECT(.\OBJ
+                    -\TestMain.obj)
+
+line level    source
+
+   1          /*
+   2           * MP3模块测试程序
+   3           * 
+   4           * 用途：MP3模块测试程序
+   5           * 
+   6           * 作者                                 日期                            备注
+   7           * Huafeng Lin                  20010/09/10                     新增
+   8           * Huafeng Lin                  20010/09/10                     修改
+   9           * 
+  10           */
+  11          
+  12          #include <reg52.h>
+  13          #include <intrins.h>
+  14          
+  15          #define uchar unsigned char
+  16          #define uint unsigned int
+  17          #define ulong unsigned long
+  18          #define true 1
+  19          #define flase 0
+  20          
+  21          void  InitPortVS1003(void);     
+  22          void TestVS1003B(void);
+  23          
+  24          void main(void)
+  25          {
+  26   1              while(1)
+  27   1              {
+  28   2                      InitPortVS1003();
+  29   2                      TestVS1003B();
+  30   2              }
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =      8    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

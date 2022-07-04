@@ -1,0 +1,40 @@
+﻿Field=Category~String~Category~157|Field=Manufacturer 1~String~Manufacturer 1~120|Field=Manufacturer Part Number 1~String~Manufacturer Part Number 1~120|Field=Package / Case~String~Package / Case~165|Field=Description~String~Description~169|Field=Quantity~Integer~Quantity~22|Field=Supplier 1~String~Supplier 1~79|Field=Supplier Part Number 1~String~Supplier Part Number 1~150|Field=Supplier Order Qty 1~Integer~Supplier Order Qty 1~45|Field=Supplier Stock 1~Integer~Supplier Stock 1~53|Field=Supplier Subtotal 1~Float~Supplier Subtotal 1~98|Field=Supplier Unit Price 1~Float~Supplier Unit Price 1~115|Field=Supplier Currency 1~String~Supplier Currency 1~98|ReportField=Currency~<none>|ReportField=ProductionQuantity~2|ReportField=ProjectFileName~PYRAMIDE CONTROLLER VER01 REVA.PrjPcb|ReportField=ProjectFullPath~C:\Users\Nano\Google Drive\Projekte\PYRAMIDE_CONTROLLER\02_Electronical_Design\02_Schematic\VER01\REVA\PYRAMIDE CONTROLLER VER01 REVA.PrjPcb|ReportField=Title~Bill of Materials For Project [PYRAMIDE CONTROLLER VER01 REVA.PrjPcb] (No PCB Document Selected)|ReportField=TotalQuantity~96|ReportField=ReportTime~22:49:02|ReportField=ReportDate~18.11.2015|ReportField=ReportDateTime~18.11.2015 22:49:02|ReportField=OutputName~Bill of Materials|ReportField=OutputType~BOM_PartType|ReportField=GeneratorName~BOM|ReportField=GeneratorDescription~Bill of Materials|ReportField=VariantName~None|ReportField=Classification~CONFIDENTIAL|ReportField=Component~BABO|ReportField=Doc#~|ReportField=Drawn by~Mathias Buder|ReportField=Project~PYCO|ReportField=ProjectTitle~Pyramide Controller|ReportField=REV~A|ReportField=VER~01|ReportField=Address1~|ReportField=Address2~|ReportField=Address3~|ReportField=Address4~|ReportField=Application_BuildNumber~|ReportField=ApprovedBy~|ReportField=Author~|ReportField=CheckedBy~|ReportField=CompanyName~|ReportField=ConfigurationParameters~|ReportField=ConfiguratorName~|ReportField=CurrentDate~18.11.2015|ReportField=CurrentTime~13:54:54|ReportField=Date~17.10.2015|ReportField=DocumentFullPathAndName~C:\Users\Nano\Google Drive\Projekte\PYRAMIDE_CONTROLLER\02_Electronical_Design\02_Schematic\VER01\REVA\Connectors.SchDoc|ReportField=DocumentName~Connectors.SchDoc|ReportField=DocumentNumber~5|ReportField=DrawnBy~|ReportField=Engineer~|ReportField=ImagePath~|ReportField=IsUserConfigurable~|ReportField=ModifiedDate~11.11.2015|ReportField=Organization~|ReportField=ProjectName~PYRAMIDE CONTROLLER VER01 REVA.PrjPcb|ReportField=Revision~11|ReportField=Rule~|ReportField=SheetNumber~5|ReportField=SheetTotal~5|ReportField=Time~|ReportField=Title~Connectors|ReportField=VersionControl_RevNumber~|ReportField=DataSourceFileName~PYRAMIDE CONTROLLER VER01 REVA.PrjPcb|ReportField=DataSourceFullPath~C:\Users\Nano\Google Drive\Projekte\PYRAMIDE_CONTROLLER\02_Electronical_Design\02_Schematic\VER01\REVA\PYRAMIDE CONTROLLER VER01 REVA.PrjPcb|ReportField=PCBDataSourceFileName~PYCO_PCB_VER01_REVA.PcbDoc|ReportField=PCBDataSourceFullPath~C:\Users\Nano\Google Drive\Projekte\PYRAMIDE_CONTROLLER\02_Electronical_Design\02_Schematic\VER01\REVA\PYCO_PCB_VER01_REVA.PcbDoc
+Programmers, Development Systems|Texas Instruments|EK-TM4C123GXL||EVAL KIT TM4C123GXL LAUNCHPAD|1|Digi-Key|296-35760-ND|2|2823|24,44|12,22|EUR
+Integrated Circuits (ICs)|Maxim Integrated|DS3231MZ/V+|8-SOIC (0.154", 3.90mm Width)|IC RTC CLK/CALENDAR I2C 8-SOIC|1|Digi-Key|DS3231MZ/V+-ND|2|1414|11,94|5,97|EUR
+Circuit Protection|Littelfuse Inc.|0154.062DR|2-SMD, Square End Block with Holder|FUSE BRD MNT 62MA 125VAC/VDC SMD|1|Digi-Key|F3148CT-ND|2|2330|8,34|4,17|EUR
+Connectors, Interconnects|FCI|10067847-001RLF||CONN SD CARD PUSH-PUSH SMD|1|Digi-Key|609-3956-1-ND|2|9437|5,12|2,56|EUR
+Switches|Copal Electronics Inc.|ATE1E-2M3-10-Z||SWITCH TOGGLE SPDT 50MA 48V|1|Digi-Key|563-1159-ND|2|2717|5,2|2,60|EUR
+Integrated Circuits (ICs)|Texas Instruments|TPS62152RGTT|16-VFQFN Exposed Pad|IC REG BUCK 3.3V 1A SYNC 16QFN|1|Digi-Key|296-30009-1-ND|2|2622|4,8|2,40|EUR
+Connectors, Interconnects|CUI Inc.|PJ-002AH-SMT-TR||CONN POWER JACK 2.1X5.5MM HI CUR|1|Digi-Key|CP-002AHPJCT-ND|2|79972|3,42|1,71|EUR
+Integrated Circuits (ICs)|Texas Instruments|TPS563200DDCT|SOT-23-6 Thin, TSOT-23-6|IC REG BUCK ADJ 3A SYNC 6SOT|1|Digi-Key|296-38434-6-ND|2|3243|2,78|1,39|EUR
+Integrated Circuits (ICs)|Microchip Technology|24AA512-I/SN|8-SOIC (0.154", 3.90mm Width)|IC EEPROM 512KBIT 400KHZ 8SOIC|1|Digi-Key|24AA512-I/SN-ND|2|6462|2,32|1,16|EUR
+Optoelectronics|Lite-On Inc.|LTST-C193KGKT-5A|0603 (1608 Metric)|LED GREEN CLEAR 0603 SMD|15|Digi-Key|160-1828-6-ND|30|75885|8,04|0,268|EUR
+Battery Products|Harwin Inc.|S8421-45R||HOLDER BATT COIN CR2032/20MM|1|Digi-Key|952-1737-1-ND|2|9511|1,94|0,97|EUR
+Capacitors|TDK Corporation|C3216X6S1A476M160AC|1206 (3216 Metric)|CAP CER 47UF 10V X6S 1206|1|Digi-Key|445-6010-6-ND|2|20133|1,92|0,96|EUR
+Integrated Circuits (ICs)|NXP Semiconductors|NTB0104BQ,115|14-VFQFN Exposed Pad|TXRX TRANSLATING 3STATE 14DHVQFN|1|Digi-Key|568-8404-1-ND|2|11153|1,66|0,83|EUR
+Inductors, Coils, Chokes|Bourns Inc.|SRR6038-3R3Y|Nonstandard|FIXED IND 3.3UH 3.5A 20 MOHM SMD|1|Digi-Key|SRR6038-3R3YCT-ND|2|865|1,24|0,62|EUR
+Discrete Semiconductor Products|Micro Commercial Co|SK36A-LTP|DO-214AC, SMA|DIODE SCHOTTKY 60V 3A DO214AC|1|Digi-Key|SK36A-LTPMSDKR-ND|2|43945|1,04|0,52|EUR
+Inductors, Coils, Chokes|Bourns Inc.|SDR0403-2R2ML|Nonstandard|FIXED IND 2.2UH 2.6A 47 MOHM SMD|1|Digi-Key|SDR0403-2R2MLCT-ND|2|9256|0,86|0,43|EUR
+Integrated Circuits (ICs)|NXP Semiconductors|74LVC1T45GW,125|6-TSSOP, SC-88, SOT-363|TXRX XLATING DUAL 3ST 6TSSOP|1|Digi-Key|568-5461-1-ND|2|57825|0,82|0,41|EUR
+Kondensatoren|Kemet|T491A106K016AT||CAP TANT 10UF 16V 10% 1206|2|Digi-Key|399-8269-1-ND|4|97831|1,52|0,38|EUR
+Connectors, Interconnects|Phoenix Contact|1935161||TERM BLOCK PCB 2POS 5.0MM GREEN|1|Digi-Key|277-1667-ND|2|20836|0,68|0,34|EUR
+Optoelectronics|Lite-On Inc.|LTST-C193KRKT-5A|0603 (1608 Metric)|LED RED CLEAR 0603 SMD|1|Digi-Key|160-1830-1-ND|2|115279|0,68|0,34|EUR
+Capacitors|TDK Corporation|C2012X5R0J226M125AC|0805 (2012 Metric)|CAP CER 22UF 6.3V X5R 0805|1|Digi-Key|445-1422-6-ND|2|411958|0,52|0,26|EUR
+Capacitors|Murata Electronics North America|GRM1885C1H391JA01D|0603 (1608 Metric)|CAP CER 390PF 50V NP0 0603|1|Digi-Key|490-1441-1-ND|2|38397|0,28|0,14|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF1002V|0603 (1608 Metric)|RES SMD 10K OHM 1% 1/10W 0603|1|Digi-Key|P10.0KHCT-ND|2|4723247|0,18|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF1003V|0603 (1608 Metric)|RES SMD 100K OHM 1% 1/10W 0603|12|Digi-Key|P100KHCT-ND|24|3322184|2,16|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF2000V|0603 (1608 Metric)|RES SMD 200 OHM 1% 1/10W 0603|1|Digi-Key|P200HCT-ND|2|1198868|0,18|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF2201V|0603 (1608 Metric)|RES SMD 2.2K OHM 1% 1/10W 0603|2|Digi-Key|P2.20KHCT-ND|4|988101|0,36|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF2401V|0603 (1608 Metric)|RES SMD 2.4K OHM 1% 1/10W 0603|2|Digi-Key|P2.40KHCT-ND|4|98821|0,36|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF3300V|0603 (1608 Metric)|RES SMD 330 OHM 1% 1/10W 0603|13|Digi-Key|P330HCT-ND|26|505878|2,34|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF5602V|0603 (1608 Metric)|RES SMD 56K OHM 1% 1/10W 0603|1|Digi-Key|P56.0KHCT-ND|2|272979|0,18|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3EKF7500V|0603 (1608 Metric)|RES SMD 750 OHM 1% 1/10W 0603|1|Digi-Key|P750HCT-ND|2|368970|0,18|0,09|EUR
+Resistors|Panasonic Electronic Components|ERJ-3GEY0R00V|0603 (1608 Metric)|RES SMD 0 OHM JUMPER 1/10W|4|Digi-Key|P0.0GCT-ND|8|7280017|0,72|0,09|EUR
+Kondensatoren|Kemet|C0603C104J4RACTU||CAP CER 100NF 16V 5% X7R 0603|9|Digi-Key|399-1097-1-ND|18|868411|1,26|0,07|EUR
+|||||1|||||||
+|||||1|||||||
+|||||1|||||||
+|||||1|||||||
+|||||2|||||||
+|||||3|||||||
+|||||4|||||||

@@ -1,0 +1,329 @@
+--------------------------------------------------
+25.10.2016 22:28:56
+Open COM3 9600
+
+25.10.2016 22:29:02
+Read All Setting
+No Return!
+
+25.10.2016 22:29:06
+Read All Setting
+No Return!
+
+25.10.2016 22:30:25
+Open COM3 9600
+
+25.10.2016 22:30:37
+Reset Module
+No Return!
+
+25.10.2016 22:32:00
+Read All Setting
+No Return!
+
+25.10.2016 22:32:04
+Read All Setting
+No Return!
+
+25.10.2016 22:32:15
+Reset Module
+No Return!
+
+--------------------------------------------------
+28.10.2016 23:52:37
+Open COM3 9600
+
+28.10.2016 23:52:42
+Read All Setting
+No Return!
+
+28.10.2016 23:52:46
+Read All Setting
+No Return!
+
+28.10.2016 23:52:52
+Reset Module
+No Return!
+
+28.10.2016 23:52:58
+Read All Setting
+No Return!
+
+Return OK!
+
+Return OK!
+
+Return OK!
+
+28.10.2016 23:53:44
+Open COM1 9600
+
+Return OK!
+
+Return OK!
+
+28.10.2016 23:54:01
+Set TxPower:20dBm
+No Return!
+
+--------------------------------------------------
+09.11.2016 11:42:30
+Open COM28 9600
+
+09.11.2016 11:42:33
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 9600
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+09.11.2016 11:42:45
+Reset Module
+Return OK!
+
+09.11.2016 11:42:50
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 9600
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+Return OK!
+
+--------------------------------------------------
+09.11.2016 11:43:19
+Open COM28 115200
+
+09.11.2016 11:43:21
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 9600
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+09.11.2016 11:44:07
+Set WirelessBitRate:115200bps
+Return OK!
+
+09.11.2016 11:44:12
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 115200
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+09.11.2016 11:44:30
+Open COM28 115200
+
+09.11.2016 11:44:34
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 115200
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+--------------------------------------------------
+09.11.2016 11:51:24
+Open COM28 1200
+
+09.11.2016 11:51:26
+Read All Setting
+No Return!
+
+09.11.2016 11:51:31
+Open COM28 115200
+
+09.11.2016 11:51:32
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 115200
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+--------------------------------------------------
+09.11.2016 12:02:00
+Open COM28 115200
+
+09.11.2016 12:02:04
+Read All Setting
+No Return!
+
+09.11.2016 12:02:13
+Read All Setting
+No Return!
+
+--------------------------------------------------
+09.11.2016 12:03:14
+Open COM28 115200
+
+09.11.2016 12:03:25
+Read All Setting
+No Return!
+
+--------------------------------------------------
+09.11.2016 17:51:46
+Open COM5 4800
+
+09.11.2016 17:51:49
+Read All Setting
+No Return!
+
+09.11.2016 17:52:14
+Read All Setting
+No Return!
+
+09.11.2016 17:52:32
+Read All Setting
+No Return!
+
+09.11.2016 17:54:06
+Read All Setting
+No Return!
+
+09.11.2016 17:54:14
+Read All Setting
+No Return!
+
+09.11.2016 17:54:57
+Open COM5 9600
+
+09.11.2016 17:54:59
+Read All Setting
+No Return!
+
+09.11.2016 17:55:06
+Read All Setting
+No Return!
+
+09.11.2016 17:55:31
+Read All Setting
+No Return!
+
+09.11.2016 17:56:19
+Read All Setting
+No Return!
+
+09.11.2016 17:56:25
+Read All Setting
+No Return!
+
+09.11.2016 17:56:34
+Read All Setting
+No Return!
+
+09.11.2016 17:56:47
+Read All Setting
+No Return!
+
+09.11.2016 17:56:53
+Read All Setting
+No Return!
+
+09.11.2016 17:57:00
+Read All Setting
+No Return!
+
+09.11.2016 17:57:11
+Read All Setting
+No Return!
+
+09.11.2016 17:57:14
+Read All Setting
+No Return!
+
+09.11.2016 17:57:28
+Read All Setting
+No Return!
+
+09.11.2016 17:57:40
+Read All Setting
+No Return!
+
+09.11.2016 17:58:39
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 9600
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+Return OK!
+
+09.11.2016 17:58:58
+Open COM5 115200
+
+09.11.2016 17:58:59
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 9600
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+--------------------------------------------------
+09.11.2016 17:59:07
+Open COM5 115200
+
+09.11.2016 17:59:10
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 9600
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+09.11.2016 18:00:05
+Set WirelessBitRate:115200bps
+Return OK!
+
+09.11.2016 18:00:08
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 115200
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+09.11.2016 18:00:22
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 115200
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+--------------------------------------------------
+09.11.2016 18:00:50
+Open COM5 115200
+
+09.11.2016 18:00:52
+Read All Setting
+No Return!
+
+09.11.2016 18:00:58
+Read All Setting
+Read Parameters:
+Frequency: 869000000
+WirelessBitRate: 115200
+Deviation: 35
+Tx Power: 20
+Bandwidth: 105
+
+--------------------------------------------------
