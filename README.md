@@ -173,3 +173,18 @@ The system configuration is done using the supplied USB wireless adapter. This, 
 <img src='images/task_list_console_output.png' width='100%'>
 
 ### Command List
+
+```mermaid
+    flowchart TB
+      start(((Start))) --> J1(( ))
+      J1(( )) --> A{Task Running?}
+      subgraph Task List
+        A -->|No| C[[Search in Task List]]
+        D -->|Yes| E[[Start Task]]
+        D -->|No| J1
+        E --> J1
+        B -->|Yes| C[[Stop Task]]
+      end
+      A -->|Yes| B{Task Stop Time Reached?}
+     C --> D{Task Found?}
+```
