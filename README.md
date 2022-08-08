@@ -4,7 +4,7 @@
   - [Requirement Definition](#requirement-definition)
   - [System Architecture](#system-architecture)
     - [CPU Board](#cpu-board)
-  - [Sound card](#sound-card)
+  - [Sound Card](#sound-card)
   - [UART-RF Bridge](#uart-rf-bridge)
   - [Electronical Design](#electronical-design)
   - [Final Device Layout](#final-device-layout)
@@ -14,6 +14,7 @@
     - [Persistent Memory Scheme](#persistent-memory-scheme)
     - [Main Control Loop Flow](#main-control-loop-flow)
   - [Command Line Interface](#command-line-interface)
+    - [Command Structure](#command-structure)
     - [Output Format](#output-format)
       - [Real-Time Clock / Temperature](#real-time-clock--temperature)
       - [Task List](#task-list)
@@ -84,7 +85,7 @@ As central processing unit the evaluation kit [EK-TM4C123GXL](https://www.ti.com
 
 <div style="text-align:center"><img src='images/TivaC_Series_TM4C123G_LaunchPad_Evaluation_Board.png' width='70%'></div>
 
-## Sound card
+## Sound Card
 To enable the device to play audio in .mp3 and .wav format the audio codec [VS1003 from VLSI solution](electronical%20design/components/02_Audio_Codec/VS1003.pdf) has been utilized. It connects to an MCU over an SPI interface and accepts a raw data stream of many codecs like MP3, WMA, RIFF WAV amd MIDI formats. In addition, it provides the capability to adjust the output volume by software which enables flexible audio fade-in/out.
 
 <div style="text-align:center"><img src='images/VS1003_board.png' width='50%'></div>
@@ -98,7 +99,7 @@ The system will be equipped with an software bootload that allows to update the 
 Two custom boards have been designed to allow the [HM-TRP](electronical%20design/components/09_RF/HM-TRP.pdf) to interface with thw MCUs virtual serial port and the remote computer.
 
 <div style="text-align:center"><img src='images/UART-to-RF-Bridge.JPG' width='80%'></div>
-<center>MCU ide RF adapter</center>
+<center>MCU side RF adapter</center>
 <div style="text-align:center"><img src='images/RF-to-USB-Bridge.JPG' width='80%'></div>
 <center>Remote PC side RF adapter</center>
 
@@ -207,16 +208,29 @@ The system configuration is done over UART using the RF-to-USB adapter. This, wh
 
 <div style="text-align:center"><img src='images/hterm_settings.png' width='100%'></div>
 
+### Command Structure
+The command parser uses the standard command-paramater-value structure as shown below:
+
+`<COMMAND> -<PARAM_1> <VALUE_1> -<PARAM_2> <VALUE_2> ... -<PARAM_N> <VALUE_N>`
+
+*Example: Set RTC to date 15.02.1983*
+
+`z -dd 15 -mm 02 -yy 1982`
+
+Parameters can also be used individually. The command above contains a typo as the year is set to 1982. Lets correct it by issuing command:
+
+`z -yy 1983`
+
+
 ### Output Format
 
 #### Real-Time Clock / Temperature
 The output format of the RTC and temperature component can be seen below.
 
-Date format : <Day of week> <Tag> <Monat> <Jahr>\
-Time Foramt : <Stunde> <Minute> <Sekunde>\
-Temperature Format : <##.##>
-
-
+Date Format : `<Day of week> <Day> <Month> <Year>`\
+Time Format : `<Hour> <Minute> <Second>`\
+Temperature Format : `<##.##>` °C
+ 
 <div style="text-align:center"><img src='images/rtc_console_output.png' width='25%'></div>
 
 #### Task List
@@ -224,3 +238,12 @@ The output format of the task list can be seen below. Each task can be individua
 <div style="text-align:center"><img src='images/task_list_console_output.png' width='100%'></div>
 
 ### Command List
+
+| NAME    | COMMAND   | PARAMETER | VALUE RANGE |
+|---------| ---------|-----------|------------|
+| Display task list | aa | - | - |
+| Add new task | ah | - | - |
+| Remove task | ae | `<TASK_ID>` | 1 - 25 |
+| Update task | ab | -a `<TASK_ID>` <br> -sah `<START_HOUR>` <br> -sam `<START_MINUTE>` <br> -sah `<STOP_HOUR>` <br> -sam `<STOP_MINUTE>`  <br> -akm `<ACTIVE_MINUTE>` <br> -aks `<ACTIVE_SECOND>` <br> -b `<MOTION_SENSOR_FLAG>` <br> -au `<AUDIO_PLAYBACK_FLAG>` <br> -akt `<ACTUATOR_FLAG>` <br> -ak `<ACTUATOR_CHANNEL>`| 1 - 25 <br> 0 - 23 [h] <br> 0 - 59 [m] <br> 0 - 23 [h] <br> 0 - 59 [m] <br> 0 - 59 [m] <br> 0 - 59 [m] <br> 0: Off, 1: On <br> 0: Off, 1: On <br> 0: Off, 1: On <br> 1 - 8|
+| Show system parameter | sa | - | - |
+| Update system parameter | sb | -m `<MODE>` <br> -v `<DEFAULT_VOLUME>` <br> -ebz `<DEFAULT_FADE_IN_OUT_TIME>` <br> -dc `<DEFAULT_DISPLAY_CONTRAST>` <br> -db `<DEFAULT_DISPLAY_BRIGHTNESS>`  <br> ats `<DEFAULT_ACTIVE_MINUTE>` <br> -atm `<DEFAULT_ACTIVE_SECOND>` <br> -bvz `<MOTION_DETECTION_DELAY>` | 0: Auto, 1: Manuel <br> 0 - 100 [%] <br> 0 - 60 [s] <br> 1 - 50 <br> 1 - 8 <br> 0 - 59 [s] <br> 0 - 59 [s] <br> 0 - 59 [s]
