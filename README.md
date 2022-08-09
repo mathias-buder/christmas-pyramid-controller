@@ -239,11 +239,43 @@ The output format of the task list can be seen below. Each task can be individua
 
 ### Command List
 
-| NAME    | COMMAND   | PARAMETER | VALUE RANGE |
-|---------| ---------|-----------|------------|
+| Description | Command | Parameter | Value Range |
+| --------- | :---------: | ----------- | ------------ |
+| __General__ |
+| Show all available commands | ? | - | - |
+| Clear console history | cls | - | - |
+| Save task list to file <br> (see [task.cfg](#persistent-memory-scheme) for details) | spa | - | - |
+| Save system parameter to file <br> (see [system.cfg](#persistent-memory-scheme) for details) | sps | - | - |
+| Load task list and system configuration from file <br> (see [task.cfg, system.cfg](#persistent-memory-scheme) for details) | lad | - | - |
+| __Task Management__ |
 | Display task list | aa | - | - |
 | Add new task | ah | - | - |
 | Remove task | ae | `<TASK_ID>` | 1 - 25 |
 | Update task | ab | -a `<TASK_ID>` <br> -sah `<START_HOUR>` <br> -sam `<START_MINUTE>` <br> -sah `<STOP_HOUR>` <br> -sam `<STOP_MINUTE>`  <br> -akm `<ACTIVE_MINUTE>` <br> -aks `<ACTIVE_SECOND>` <br> -b `<MOTION_SENSOR_FLAG>` <br> -au `<AUDIO_PLAYBACK_FLAG>` <br> -akt `<ACTUATOR_FLAG>` <br> -ak `<ACTUATOR_CHANNEL>`| 1 - 25 <br> 0 - 23 [h] <br> 0 - 59 [m] <br> 0 - 23 [h] <br> 0 - 59 [m] <br> 0 - 59 [m] <br> 0 - 59 [m] <br> 0: Off, 1: On <br> 0: Off, 1: On <br> 0: Off, 1: On <br> 1 - 8|
-| Show system parameter | sa | - | - |
-| Update system parameter | sb | -m `<MODE>` <br> -v `<DEFAULT_VOLUME>` <br> -ebz `<DEFAULT_FADE_IN_OUT_TIME>` <br> -dc `<DEFAULT_DISPLAY_CONTRAST>` <br> -db `<DEFAULT_DISPLAY_BRIGHTNESS>`  <br> ats `<DEFAULT_ACTIVE_MINUTE>` <br> -atm `<DEFAULT_ACTIVE_SECOND>` <br> -bvz `<MOTION_DETECTION_DELAY>` | 0: Auto, 1: Manuel <br> 0 - 100 [%] <br> 0 - 60 [s] <br> 1 - 50 <br> 1 - 8 <br> 0 - 59 [s] <br> 0 - 59 [s] <br> 0 - 59 [s]
+| __System Parameter__ |
+| Display system parameter | sa | - | - |
+| Set operation mode <br> Set default playback volume <br> Set default audio playback fade-in time <br> Set default display contrast <br> Set default display brightness <br> Set default audio playback active time [m] <br> Set default audio playback active time [s] <br> Set motion detection debounce time | sb | -m `<MODE>` <br> -v `<DEFAULT_VOLUME>` <br> -ebz `<DEFAULT_FADE_IN_OUT_TIME>` <br> -dc `<DEFAULT_DISPLAY_CONTRAST>` <br> -db `<DEFAULT_DISPLAY_BRIGHTNESS>`  <br> -atm `<DEFAULT_ACTIVE_MINUTE>` <br> -ats `<DEFAULT_ACTIVE_SECOND>` <br> -bvz `<MOTION_DETECTION_DELAY>` | 0: Auto, 1: Manuel <br> 0 - 100 [%] <br> 0 - 60 [s] <br> 1 - 50 <br> 1 - 8 <br> 0 - 59 [s] <br> 0 - 59 [s] <br> 0 - 59 [s]
+| __Audio Management__ |
+| Playback audio | play | `<PATH_TO_AUDIO_FILE>` | - |
+| Pause audio | pause | - | - |
+| Stop audio | stop | - | - |
+| Adjust audio volume | lst | `<VOLUME>` | 0 - 100 [%] |
+| Adjust audio fade-in time | einbl | `<TIME>` | 0 - 60 [s] |
+| Adjust audio fade-out time | ausbl | `<TIME>` | 0 - 60 [s] |
+| __SD Card Management__ |
+| List content | ls | - | - |
+| Change directory | cd | `<DIR_NAME>` | - |
+| Move one directory level up | cd .. | - | - |
+| Print working directory | pwd | - | - |
+| Print file content | cat | `<FILE_NAME>` | - |
+| Remove file/folder | rm | `<FILE/FOLDER_NAME>` | - |
+| Index audio files<br>(Is done at every start-up) | index | - | - |
+| __Real-Time Clock (RTC) Management__ |
+| Show all available commands <br> Show Time, Date amd Temperature <br> Set day of week <br> Set day <br> Set Month <br> Set Year <br> Set Hour <br> Set Minute <br> Set Second| z | -? <br> -a <br> -wt `<DAY_OF_WEEK>` <br> -dd `<DAY>` <br> -mm `<MONTH>` <br> -yy `<YEAR>` <br> -h `<HOUR>` <br> -m `<MINUTE>` <br> -s `<SECOND>` | - <br> - <br> Mo, Di, Mi, Do, Fr, Sa, So <br> 1 - 31 <br> 1 - 12 <br> 0 - 99 <br> 0 - 23 <br> 0 - 59 <br> 0 - 59
+| __Display Management__ |
+| Adjust contrast <br> Adjust brightness | disp | -c `<CONTRAST>` <br> -b `<BRIGHTNESS>` | 1 - 50 <br> 1 - 8|
+| __Actuator Management__ |
+| Enable relay <br> Disable relay <br> Enable all relays <br> Disable all relays | rly | -an `<CHANNEL_NO>` <br> -aus `<CHANNEL_NO>` <br> -allean <br> -alleaus| 1 - 8 <br> 1 - 8 <br> - <br> -|
+
+
+
