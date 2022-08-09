@@ -30,7 +30,9 @@ As the pyramid was to remain standing for the entire Christmas season, a control
 # The Christmas Pyramid
 As can be seen below, the pyramid contains a number of lamps (230 VAC) as well as a motor (230 VAC) for turning the wings.
 
-<div style="text-align:center"><img src='images/christmas-pyramid.gif' width='50%'></div>
+<p align="center">
+<img src='images/christmas-pyramid.gif' width='50%'>
+</p>
 
 # Control Unit Design
 This section is going to describe the control unit design process.
@@ -70,7 +72,7 @@ The overall system architecture is shown in the block diagram below. The basic i
 10. 8-channel relay board (230VAC IOA)
 11. Infrared motion sensor HCSR501
 
-<div style="text-align:center"><img src='images/PYCO-Blockdiagram.png' width='100%'></div>
+<p align="center"><img src='images/PYCO-Blockdiagram.png' width='100%'></p>
 
 ### CPU Board
 As central processing unit the evaluation kit [EK-TM4C123GXL](https://www.ti.com/tool/EK-TM4C123GXL) from TI has been used. This board offers:
@@ -83,24 +85,24 @@ As central processing unit the evaluation kit [EK-TM4C123GXL](https://www.ti.com
 * Rich, free and easy-to-use API provided by TI
 * __Cost on 10 EUR__
 
-<div style="text-align:center"><img src='images/TivaC_Series_TM4C123G_LaunchPad_Evaluation_Board.png' width='70%'></div>
+<p align="center"><img src='images/TivaC_Series_TM4C123G_LaunchPad_Evaluation_Board.png' width='70%'></p>
 
 ## Sound Card
 To enable the device to play audio in .mp3 and .wav format the audio codec [VS1003 from VLSI solution](electronical%20design/components/02_Audio_Codec/VS1003.pdf) has been utilized. It connects to an MCU over an SPI interface and accepts a raw data stream of many codecs like MP3, WMA, RIFF WAV amd MIDI formats. In addition, it provides the capability to adjust the output volume by software which enables flexible audio fade-in/out.
 
-<div style="text-align:center"><img src='images/VS1003_board.png' width='50%'></div>
+<p align="center"><img src='images/VS1003_board.png' width='50%'></p>
 
 
 ## UART-RF Bridge
 The system will be equipped with an software bootload that allows to update the software of the virtual serial port. As this update is required to be performed over the air the UART-to-RF bridge [HM-TRP](electronical%20design/components/09_RF/HM-TRP.pdf) has been utilized.
 
-<div style="text-align:center"><img src='images/HM-TRP.png' width='50%'></div>
+<p align="center"><img src='images/HM-TRP.png' width='50%'></p>
 
 Two custom boards have been designed to allow the [HM-TRP](electronical%20design/components/09_RF/HM-TRP.pdf) to interface with thw MCUs virtual serial port and the remote computer.
 
-<div style="text-align:center"><img src='images/UART-to-RF-Bridge.JPG' width='80%'></div>
+<p align="center"><img src='images/UART-to-RF-Bridge.JPG' width='80%'></p>
 <center>MCU side RF adapter</center>
-<div style="text-align:center"><img src='images/RF-to-USB-Bridge.JPG' width='80%'></div>
+<p align="center"><img src='images/RF-to-USB-Bridge.JPG' width='80%'></p>
 <center>Remote PC side RF adapter</center>
 
 
@@ -116,17 +118,17 @@ The final result after the PCB schematics capture and layout phase can be seen b
 
 __Note: The RF-to-UART board isn't attached on these images. It would be stacked on top of the EK-TM4C123GXL evaluation kit.__
 
-<div style="text-align:center"><img src='images/pcb_design_model.png' width='80%'></div>
+<p align="center"><img src='images/pcb_design_model.png' width='80%'></p>
 
 
 ## Final Device Layout
 The final result of the assembled device incl. its enclosure can be seen below.
-<div style="text-align:center">
+<p align="center">
 <img src='images/device_top_view.png' width='80%'>
 <img src='images/device_if_view.png' width='80%'>
 <img src='images/IMG_1225.jpg' width='80%'>
 <img src='images/IMG_1228.jpg' width='80%'>
-</div>
+</p>
 
 
 ## Software Architecture
@@ -134,7 +136,7 @@ The final result of the assembled device incl. its enclosure can be seen below.
 ### Software Layer Stackup
 The software has been broken into individual software components that where stacked onto each other and exchange data over a defined software interface.
 
-<div style="text-align:center"><img src='images/PYCO-SoftwareLayerStack-REVA.png' width='80%'></div>
+<p align="center"><img src='images/PYCO-SoftwareLayerStack-REVA.png' width='80%'></p>
 
 ### Source Code Layout
 - [Application](/software/main.c)
@@ -192,7 +194,7 @@ All data that is required to be saved persistently is stored onto the SD card in
 ### Main Control Loop Flow
 The software has been design in a way that all runs within a single runnable instance. To accomplish the parallel processing of the main control loop, the Audio and UART handling an interrupt mechanism is used.
 
-<div style="text-align:center"><img src='images/MainControlLoop.png' width='80%'></div>
+<p align="center"><img src='images/MainControlLoop.png' width='80%'></p>
 
 ## Command Line Interface
 
@@ -206,7 +208,7 @@ The system configuration is done over UART using the RF-to-USB adapter. This, wh
 | Parity | none |
 | CTS| none |
 
-<div style="text-align:center"><img src='images/hterm_settings.png' width='100%'></div>
+<p align="center"><img src='images/hterm_settings.png' width='100%'></p>
 
 ### Command Structure
 The command parser uses the standard command-paramater-value structure as shown below:
@@ -231,11 +233,11 @@ Date Format : `<Day of week> <Day> <Month> <Year>`\
 Time Format : `<Hour> <Minute> <Second>`\
 Temperature Format : `<##.##>` °C
  
-<div style="text-align:center"><img src='images/rtc_console_output.png' width='25%'></div>
+<p align="center"><img src='images/rtc_console_output.png' width='25%'></p>
 
 #### Task List
 The output format of the task list can be seen below. Each task can be individually configured using the commands listed in section [Command List](#command-list) below.
-<div style="text-align:center"><img src='images/task_list_console_output.png' width='100%'></div>
+<p align="center"><img src='images/task_list_console_output.png' width='100%'></p>
 
 ### Command List
 
